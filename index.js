@@ -12,6 +12,8 @@ const home = require("./routes/home");
 const register = require("./routes/register");
 const verify = require("./routes/verify");
 const api = require("./routes/api");
+const update = require("./routes/update");
+const del = require("./routes/delete");
 
 const app = express();
 app.use(
@@ -28,6 +30,8 @@ app.use("/", home);
 app.use("/register", register);
 app.use("/verify", verify);
 app.use("/api", api);
+app.use("/api/update", update);
+app.use("/api/delete", del);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
